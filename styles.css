@@ -28,6 +28,24 @@ body {
   font-family: 'Poppins', sans-serif;
   overflow: hidden;
 }
+/* 手机端导航栏样式 */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column; /* 垂直排列 */
+    width: 100%;
+  }
+
+  .navbar ul li {
+    margin: 10px 0; /* 增加上下间距 */
+    width: 100%;
+  }
+
+  .navbar ul li a {
+    justify-content: start; /* 文字靠左显示 */
+    padding: 10px; /* 增加内边距 */
+  }
+}
+
 
 .navbar ul {
   list-style-type: none;
@@ -161,7 +179,7 @@ body {
   }
 
   .carousel-image {
-    width: 400px;
+    width: 100%;
     height: auto;
     object-fit: cover; /* 保证图片覆盖整个轮播图区域 */
   }
