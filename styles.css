@@ -155,7 +155,7 @@ body {
   background: linear-gradient(45deg, #f5d0ff, #c2e5ff); /* 轮播图背景改为更艳丽的浅色系渐变 */
 }
 /* 轮播图自适应样式 */
-@media (max-width: 768px) {
+@media (max-width: 400px) {
   .carousel {
     height: 200px; /* 根据需要调整高度 */
   }
