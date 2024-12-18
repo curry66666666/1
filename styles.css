@@ -50,12 +50,7 @@ body {
   position: relative;
   transition: color 0.3s ease, text-shadow 0.3s ease, background-color 0.3s ease;
 }
-/* 媒体查询，针对手机端（移动端） */
-@media (max-width: 768px) {
-  .navbar ul li a {
-    font-size: 9px;
-  }
-}
+
 
 
 .navbar ul li a::before {
