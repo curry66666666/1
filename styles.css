@@ -28,23 +28,24 @@ body {
   font-family: 'Poppins', sans-serif;
   overflow: hidden;
 }
-@media (min-width: 768px) {
+/* 手机端导航栏样式 */
+@media (max-width: 768px) {
   .navbar ul {
     flex-direction: column; /* 垂直排列 */
     width: 100%;
+    padding: 0; /* 确保没有内边距 */
   }
 
   .navbar ul li {
-    margin: 10px 0; /* 增加上下间距 */
+    margin: 5px 0; /* 减少上下间距 */
     width: 100%;
   }
 
   .navbar ul li a {
     justify-content: start; /* 文字靠左显示 */
-    padding: 10px; /* 增加内边距 */
+    padding: 10px 15px; /* 调整内边距，确保文本不会太靠近边缘 */
   }
 }
-
 
 
 .navbar ul {
@@ -186,7 +187,7 @@ body {
   opacity: 0;
   transition: opacity 0.5s ease;
 }
-@media (max-width: 400px) {
+@media (max-width: 768px) {
   .carousel {
     height: 200px; /* 根据需要调整高度 */
   }
