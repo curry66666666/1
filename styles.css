@@ -161,7 +161,7 @@ body {
   }
 
   .carousel-image {
-    width: 90%;
+    width: 400px;
     height: auto;
     object-fit: cover; /* 保证图片覆盖整个轮播图区域 */
   }
