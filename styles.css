@@ -51,8 +51,6 @@ body {
   transition: color 0.3s ease, text-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-
-
 .navbar ul li a::before {
   content: '';
   position: absolute;
@@ -592,4 +590,41 @@ body.night-mode {
 #close-qrcode {
   margin-top: 10px;
   cursor: pointer;
+}
+/* 响应式布局调整 */
+@media (max-width: 768px) {
+  .phone-card-container {
+    justify-content: center;
+  }
+  .phone-card {
+    width: calc(100% - 40px); /* 保持卡片之间的间距 */
+  }
+  .ranking-col {
+    flex-basis: 100%; /* 在小屏幕上，每个排行榜项占满整个宽度 */
+  }
+}
+
+/* 导航栏响应式设计 */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar ul li {
+    margin: 10px 0;
+  }
+  .search-bar {
+    width: 100%; /* 搜索栏宽度调整为100% */
+  }
+}
+
+/* 弹窗和弹出层的响应式设计 */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 90%;
+    max-width: none;
+  }
+  .wechat-qrcode {
+    max-width: 90%;
+  }
 }
