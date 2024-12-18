@@ -153,4 +153,8 @@ window.onclick = function(event) {
     hideWechatQRCode();
   }
 };
+function toggleNavbar() {
+  var menu = document.getElementById('navMenu');
+  menu.classList.toggle('show');
+}
 
