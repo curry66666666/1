@@ -28,8 +28,7 @@ body {
   font-family: 'Poppins', sans-serif;
   overflow: hidden;
 }
-/* 手机端导航栏样式 */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .navbar ul {
     flex-direction: column; /* 垂直排列 */
     width: 100%;
@@ -45,6 +44,7 @@ body {
     padding: 10px; /* 增加内边距 */
   }
 }
+
 
 
 .navbar ul {
@@ -172,7 +172,20 @@ body {
   margin-top: 60px;
   background: linear-gradient(45deg, #f5d0ff, #c2e5ff); /* 轮播图背景改为更艳丽的浅色系渐变 */
 }
-/* 轮播图自适应样式 */
+
+
+  .
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
 @media (max-width: 400px) {
   .carousel {
     height: 200px; /* 根据需要调整高度 */
@@ -185,17 +198,6 @@ body {
   }
 }
 
-
-.carousel-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
 
 .carousel-image.active {
   opacity: 1;
