@@ -28,26 +28,6 @@ body {
   font-family: 'Poppins', sans-serif;
   overflow: hidden;
 }
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column; /* 设置为垂直排列 */
-    align-items: flex-start; /* 左对齐 */
-    width: 100%; /* 占满整个屏幕宽度 */
-  }
-  .navbar ul {
-    width: 100%; /* 占满整个屏幕宽度 */
-  }
-  .navbar ul li {
-    width: 100%; /* 每个列表项占满整个屏幕宽度 */
-    margin: 10px 0; /* 上下间距 */
-  }
-  .navbar ul li a {
-    text-align: center; /* 文字居中 */
-    padding: 10px; /* 内边距 */
-    border-radius: 5px; /* 圆角 */
-  }
-}
-
 
 .navbar ul {
   list-style-type: none;
@@ -176,13 +156,9 @@ body {
 }
 @media (max-width: 768px) {
   .carousel {
-    width: 90%; /* 设置轮播图为手机屏幕宽度的90% */
-    margin: 5% auto; /* 上下边距为5%，左右自动 */
-    height: auto; /* 高度自适应 */
-    border-radius: 10px; /* 保持圆角 */
+    margin-top: 10px; /* 手机端减少上边距 */
   }
 }
-
 
 
 .carousel-image {
@@ -620,4 +596,14 @@ body.night-mode {
 #close-qrcode {
   margin-top: 10px;
   cursor: pointer;
+}
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none; /* 默认不显示 */
+    flex-direction: column;
+    width: 100%;
+  }
+  .nav-menu.show {
+    display: flex; /* 显示导航菜单 */
+  }
 }
