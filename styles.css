@@ -11,17 +11,18 @@ body {
   background-attachment: fixed; /* 固定背景，不随页面滚动 */
 }
 
+
 /* 导航栏样式 */
 .navbar {
-  background: linear-gradient(45deg, #ff66cc, #33ccff); /* 改为更艳丽的粉色到蓝色渐变背景 */
+  position: fixed; /* 固定定位，始终位于页面顶部 */
+  width: 100%; /* 宽度100%，占满整个屏幕 */
+  z-index: 1030; /* 确保导航栏在轮播图上方 */
+  top: 0; /* 顶部对齐 */
+  background: linear-gradient(45deg, #ff66cc, #33ccff); /* 渐变背景 */
   color: white;
   padding: 15px 0;
   display: flex;
   justify-content: center;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
@@ -29,11 +30,14 @@ body {
   overflow: hidden;
 }
 
+
 .navbar ul {
   list-style-type: none;
   padding: 0;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 @media (max-width: 768px) {
@@ -42,9 +46,12 @@ body {
     align-items: flex-start;
   }
   .navbar ul li {
-    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+    margin: 5px 0;
   }
 }
+
 
 .navbar ul li {
   margin: 0 20px;
@@ -165,14 +172,16 @@ body {
 
 /* 轮播图样式 */
 .carousel {
-  position: relative;
-  width: 100%;
-  height: 400px;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  margin-top: 60px;
-  background: linear-gradient(45deg, #f5d0ff, #c2e5ff); /* 轮播图背景改为更艳丽的浅色系渐变 */
+  position: relative; /* 相对定位 */
+  top: 0; /* 顶部开始 */
+  width: 100%; /* 宽度100%，占满整个屏幕 */
+  height: 400px; /* 高度 */
+  overflow: hidden; /* 隐藏溢出的内容 */
+  border-radius: 10px; /* 圆角 */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* 阴影效果 */
+  margin-top: 60px; /* 与导航栏的高度保持一定距离，避免被遮挡 */
+  background: linear-gradient(45deg, #f5d0ff, #c2e5ff); /* 浅色系渐变背景 */
+
 }
 
 @media (max-width: 768px) {
@@ -428,6 +437,7 @@ body {
   height: 100%;
   overflow: auto;
   background-color: rgba(0,0,0,0.4);
+  z-index: 1050; /* 增加z-index值，确保弹窗在最顶层 */
 }
 
 .modal-content {
@@ -513,118 +523,6 @@ body.night-mode {
   background-color: #444;
 }
 
-/* 夜间模式切换按钮样式 */
-#night-mode-toggle {
-  background-color: #33ccff; /* 按钮背景颜色 */
-  color: #fff; /* 文字颜色 */
-  padding: 10px 15px; /* 内边距 */
-  border-radius: 5px; /* 边框圆角 */
-  border: none; /* 无边框 */
-  cursor: pointer; /* 鼠标悬停时显示指针 */
-  font-size: 16px; /* 字体大小 */
-  transition: background-color 0.3s ease; /* 过渡效果 */
-}
-
-#night-mode-toggle i {
-  margin-right: 8px; /* 图标右侧间距 */
-}
-
-#night-mode-toggle:hover {
-  background-color: #ff66cc; /* 鼠标悬停时背景颜色 */
-}
-
-.navbar ul li #night-mode-toggle {
-  background-color: #33ccff; /* 夜间模式按钮背景颜色 */
-  color: #fff; /* 文字颜色 */
-  padding: 10px 15px; /* 内边距 */
-  border-radius: 5px; /* 边框圆角 */
-  border: none; /* 无边框 */
-  cursor: pointer; /* 鼠标悬停时显示指针 */
-  font-size: 16px; /* 字体大小 */
-  transition: background-color 0.3s ease; /* 过渡效果 */
-}
-
-.navbar ul li #night-mode-toggle i {
-  margin-right: 8px; /* 图标右侧间距 */
-}
-
-.navbar ul li #night-mode-toggle:hover {
-  background-color: #ff66cc; /* 鼠标悬停时背景颜色 */
-}
-
-/* 悬浮球样式 */
-.chat-button {
-  position: fixed;
-  bottom: 85%;
-  right: 20px; /* 距离右侧20px */
-  width: 40px; /* 宽度缩小 */
-  height: 40px; /* 高度缩小 */
-  background-color: #4CAF50;
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1001; /* 确保悬浮球的z-index高于弹出层 */
-  transform: translateY(50%); /* 垂直居中 */
-}
-
-@media (max-width: 768px) {
-  .chat-button {
-    bottom: 10px; /* 在手机视图中，将悬浮球固定在底部 */
-    right: 10px; /* 距离右侧10px */
-  }
-}
-
-/* 微信二维码弹出层样式 */
-.wechat-qrcode {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: auto; /* 自动宽度 */
-  max-width: 80%; /* 最大宽度调整为屏幕的80% */
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  z-index: 1000;
-  display: none; /* 默认不显示 */
-}
-
-@media (max-width: 768px) {
-  .wechat-qrcode {
-    max-width: 90%; /* 在手机视图中，最大宽度调整为屏幕的90% */
-    padding: 10px; /* 减少内边距 */
-  }
-  .wechat-qrcode img {
-    max-width: 80%; /* 设置图片最大宽度为弹出层宽度的80% */
-  }
-}
-
-/* 关闭按钮样式 */
-.close-qrcode {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  .close-qrcode {
-    font-size: 20px; /* 在手机视图中，减小关闭按钮的字体大小 */
-  }
-}
-
-/* 关闭按钮样式 */
-#close-qrcode {
-  margin-top: 10px;
-  cursor: pointer;
-}
 /* 夜间模式切换按钮样式 */
 #night-mode-toggle {
   background-color: #33ccff; /* 按钮背景颜色 */
