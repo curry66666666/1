@@ -53,7 +53,7 @@ body {
 /* 媒体查询，针对手机端（移动端） */
 @media (max-width: 768px) {
   .navbar ul li a {
-    font-size: 5px; /* 移动端字体大小减半 */
+    font-size: 7px;
   }
 }
 
