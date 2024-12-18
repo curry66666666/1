@@ -156,12 +156,13 @@ body {
 }
 @media (max-width: 768px) {
   .carousel {
-    width: 80%; /* 设置轮播图为手机屏幕宽度的90% */
+    width: 90%; /* 设置轮播图为手机屏幕宽度的90% */
     margin-left: 5%; /* 使轮播图居中显示 */
     height: auto; /* 高度自适应 */
     border-radius: 10px; /* 保持圆角 */
   }
 }
+
 
 
 .carousel-image {
