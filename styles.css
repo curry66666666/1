@@ -30,11 +30,9 @@ body {
 
 /* 导航栏响应式设计 */
 @media (max-width: 768px) {
-  .navbar ul {
+  .navbar {
     flex-direction: column;
     align-items: flex-start;
-    padding: 0;
-    width: 100%;
   }
   .navbar ul li {
     margin: 10px 0;
@@ -45,14 +43,8 @@ body {
     padding: 10px;
     border-radius: 0;
   }
-  .search-bar {
-    width: 100%;
-    padding: 10px;
-  }
-  .search-bar input[type="text"] {
-    width: calc(100% - 20px);
-  }
 }
+
 
 
 /* 搜索栏样式 */
@@ -123,13 +115,11 @@ body {
 /* 轮播图响应式设计 */
 @media (max-width: 768px) {
   .carousel {
-    margin-top: 0; /* 手机端去除顶部边距 */
-    height: auto; /* 高度自适应 */
-  }
-  .carousel-image {
+    width: 100%; /* 设置轮播图为手机屏幕宽度 */
     height: auto; /* 高度自适应 */
   }
 }
+
 
 .carousel-image {
   width: 100%;
